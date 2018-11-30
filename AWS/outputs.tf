@@ -1,33 +1,29 @@
 #-------root/outputs.tf
 
-
 #-----------storage outputs---------------
 output "Bucket Name" {
-    value = "${module.storage.bucketname}"
+  value = "${module.storage.bucketname}"
 }
-
 
 #------------Networking outputs
 output "Public Subnets" {
-   value = "${join(", ", module.networking.public_subnets)}"
+  value = "${join(", ", module.networking.public_subnets)}"
 }
 
 output "Subnet IPs" {
-    value = "${join(", ", module.networking.subnet_ips)}"
+  value = "${join(", ", module.networking.subnet_ips)}"
 }
 
 output "Public Security Group" {
   value = "${module.networking.public_sg}"
 }
 
-
 #------------compute outputs
 
 output "Public Instance IDs" {
-    value = "${module.compute.server_id}"
+  value = "${module.compute.server_id}"
 }
 
 output "Public Instance IPs" {
   value = "${module.compute.server_ip}"
 }
-
